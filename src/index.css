@@ -4,17 +4,92 @@
 
 @layer base {
   body {
-    @apply bg-sky-light text-gray-800;
+    @apply bg-sky-light text-gray-800 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply text-gray-600 leading-relaxed;
   }
 }
 
 @layer components {
   .btn {
-    @apply bg-ocean-blue text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all duration-200;
+    @apply bg-ocean-blue text-white px-6 py-3 rounded-lg font-medium 
+           hover:bg-opacity-90 transition-all duration-200 
+           shadow-sm hover:shadow-md 
+           flex items-center justify-center gap-2;
   }
-  
+
+  .btn-secondary {
+    @apply bg-white text-ocean-blue border-2 border-ocean-blue
+           hover:bg-ocean-blue hover:text-white;
+  }
+
   .card {
-    @apply bg-white rounded-lg shadow-md p-4;
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md 
+           transition-all duration-200 p-6;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .nav-link {
+    @apply text-gray-600 hover:text-ocean-blue font-medium 
+           transition-colors duration-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-ocean-blue to-blue-600 
+           bg-clip-text text-transparent;
+  }
+
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-ocean-blue;
+  }
+
+  .timeline-dot {
+    @apply absolute left-[-9px] top-0 w-4 h-4 rounded-full 
+           bg-ocean-blue border-4 border-white;
+  }
+
+  .tech-card {
+    @apply card hover:scale-105 transition-transform duration-200;
+  }
+
+  .team-card {
+    @apply card hover:shadow-lg transition-all duration-200;
+  }
+
+  .gallery-item {
+    @apply rounded-lg overflow-hidden shadow-md hover:shadow-xl 
+           transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300 
+           focus:ring-2 focus:ring-ocean-blue focus:border-transparent 
+           transition-all duration-200;
   }
 }
 
