@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { Download, Clock } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface Document {
   title: string;
@@ -175,24 +180,74 @@ const milestones: Milestone[] = [
 
 const gallery: GalleryItem[] = [
   {
-    title: 'Conference Presentation',
-    description: 'Presenting our research findings at the annual science conference',
+    title: 'ICU Development - Homagama',
+    description: 'Development and implementation of ICU monitoring system at Homagama Base Hospital',
+    image: '/icu-dev-homagama.jpg'
+  },
+  {
+    title: 'System Interface',
+    description: 'User interface of the LifeTrack healthcare monitoring system',
+    image: '/Screenshot 2025-05-24 154322.png'
+  },
+  {
+    title: 'Patient Monitoring',
+    description: 'Real-time patient monitoring dashboard showing vital signs and alerts',
+    image: '/Screenshot 2025-05-24 154402.png'
+  },
+  {
+    title: 'Data Analytics',
+    description: 'Advanced analytics and reporting interface for healthcare data',
+    image: '/Screenshot 2025-05-24 154453.png'
+  },
+  {
+    title: 'System Overview',
+    description: 'Comprehensive overview of the LifeTrack system architecture',
+    image: '/Screenshot 2025-05-24 154509.png'
+  },
+  {
+    title: 'Team Collaboration',
+    description: 'Our team working together on the LifeTrack project',
     image: '/WhatsApp_Image_2025-05-22_at_01.00.27_b72977c3.jpg'
   },
   {
-    title: 'Data Analysis',
-    description: 'Advanced data visualization techniques',
-    image: 'https://images.unsplash.com/photo-1581092921461-eab10380ed5b?q=80&w=2070&auto=format&fit=crop'
+    title: 'Project Development',
+    description: 'Team working on the LifeTrack project development',
+    image: '/WhatsApp Image 2025-05-25 at 15.37.36_ffc65d6d.jpg'
   },
   {
-    title: 'Strategy Session',
-    description: 'Team planning and methodology refinement',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
+    title: 'System Implementation',
+    description: 'Implementation phase of the LifeTrack system',
+    image: '/WhatsApp Image 2025-05-25 at 15.38.38_06ec46a4.jpg'
   },
   {
-    title: 'Collaboration',
-    description: 'Cross-functional team problem solving',
-    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop'
+    title: 'Team Meeting',
+    description: 'Project team meeting and discussion',
+    image: '/WhatsApp Image 2025-05-25 at 15.38.51_e0a0e068.jpg'
+  },
+  {
+    title: 'Project Planning',
+    description: 'Strategic planning session for the LifeTrack project',
+    image: '/WhatsApp Image 2025-05-25 at 15.38.51_ef7b9d5b.jpg'
+  },
+  {
+    title: 'Development Progress',
+    description: 'Tracking the development progress of the LifeTrack system',
+    image: '/WhatsApp Image 2025-05-25 at 15.38.53_a1bebcd5.jpg'
+  },
+  {
+    title: 'Team Collaboration',
+    description: 'Team members collaborating on project tasks',
+    image: '/WhatsApp Image 2025-05-25 at 15.39.08_dd9c9a9f.jpg'
+  },
+  {
+    title: 'Project Documentation',
+    description: 'Documenting the LifeTrack project progress',
+    image: '/WhatsApp Image 2025-05-25 at 15.45.11_cc897bf3.jpg'
+  },
+  {
+    title: 'Technology Stack',
+    description: 'Modern technologies used in the LifeTrack system',
+    image: '/84.jpg'
   }
 ];
 
@@ -213,7 +268,7 @@ const team: TeamMember[] = [
     name: 'Miss. Wijegunawardhana G.P.W',
     role: 'Researcher',
     description: 'BSc (Hons) Information Technology Specializing in Information Technology',
-    image: '/images/Winodaya.jpeg'
+    image: '/images/Winodya.jpg'
   },
   {
     name: 'Miss.Oshadari K.M.R.P',
@@ -420,17 +475,38 @@ export function App() {
       <section id="gallery" className="section bg-white">
         <div className="container">
           <h2 className="text-center mb-12">Project Gallery</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="gallery-swiper"
+          >
             {gallery.map((item, index) => (
-              <div key={index} className="gallery-item">
-                <img src={item.image} alt={item.title} className="w-full h-64 object-cover" />
-                <div className="p-4 bg-white">
-                  <h3 className="mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.description}</p>
+              <SwiperSlide key={index}>
+                <div className="gallery-item">
+                  <img src={item.image} alt={item.title} className="w-full h-64 object-cover rounded-lg" />
+                  <div className="p-4 bg-white">
+                    <h3 className="mb-2">{item.title}</h3>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
 
@@ -525,6 +601,11 @@ export function App() {
                 <a href="#" className="text-gray-600 hover:text-ocean-blue">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/WinuWijegunawardhana98/Research_Portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-ocean-blue">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </a>
               </div>
