@@ -265,13 +265,13 @@ const team: TeamMember[] = [
     image: '/images/malithin.png'
   },
   {
-    name: 'Miss. Wijegunawardhana G.P.W',
+    name: 'Ms. Wijegunawardhana G.P.W',
     role: 'Researcher',
     description: 'BSc (Hons) Information Technology Specializing in Information Technology',
     image: '/images/Winodya.jpg'
   },
   {
-    name: 'Miss.Oshadari K.M.R.P',
+    name: 'Ms.Oshadari K.M.R.P',
     role: 'Researcher',
     description: 'BSc (Hons) in Information Technology Specializing in Information Technology',
     image: '/images/oshadari.jpg'
@@ -283,7 +283,7 @@ const team: TeamMember[] = [
     image: '/images/Sandaruwan.jpg'
   },
   {
-    name: 'Miss.Ekanayake E.M.P.T.S',
+    name: 'Ms.Ekanayake E.M.P.T.S',
     role: 'Researcher',
     description: 'BSc (Hons) in Information Technology Specializing in Information Technology',
     image: '/images/Tharushi.jpeg'
@@ -357,8 +357,11 @@ export function App() {
             muted
             playsInline
             className="absolute min-w-full min-h-full object-cover opacity-70"
+            onError={(e) => {
+              console.error('Error loading video:', e);
+            }}
           >
-            <source src="/vedio/232538_small.mp4" type="video/mp4" />
+            <source src="./vedio/232538_small.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
