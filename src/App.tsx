@@ -116,63 +116,63 @@ const milestones: Milestone[] = [
   {
     title: 'Project Proposal',
     description: 'Initial project presentation and proposal report submission',
-    date: 'February 2023',
+    date: 'February 2024',
     marks: '12%',
     status: 'Completed'
   },
   {
     title: 'Progress Presentation – 1',
     description: 'First progress review and demonstration',
-    date: 'April 2023',
+    date: 'April 2024',
     marks: '15%',
     status: 'Completed'
   },
   {
     title: 'Research Paper Publication',
     description: 'Publication of research findings in academic journals',
-    date: 'July 2023',
+    date: 'July 2024',
     marks: '10%',
     status: 'Completed'
   },
   {
     title: 'Final Reports (Thesis)',
     description: 'Submission of comprehensive thesis documentation',
-    date: 'September 2023',
+    date: 'September 2024',
     marks: '19%',
     status: 'Completed'
   },
   {
     title: 'Progress Presentation - 2',
     description: 'Second progress review and system demonstration',
-    date: 'October 2023',
+    date: 'October 2024',
     marks: '18%',
     status: 'Completed'
   },
   {
     title: 'Status Documents 1 & 2',
     description: 'Submission of project status documentation',
-    date: 'November 2023',
+    date: 'November 2024',
     marks: '2%',
     status: 'Completed'
   },
   {
     title: 'Log Books',
     description: 'Submission of detailed project logs and documentation',
-    date: 'October 2023',
+    date: 'October 2024',
     marks: '2%',
     status: 'Completed'
   },
   {
     title: 'Final Presentation + Viva',
     description: 'Final project presentation and viva voce examination',
-    date: 'October 2023',
+    date: 'October 2024',
     marks: '20%',
     status: 'Completed'
   },
   {
     title: 'Website Development',
     description: 'Development and deployment of project website',
-    date: 'October 2023',
+    date: 'October 2024',
     marks: '2%',
     status: 'Completed'
   }
