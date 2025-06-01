@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Clock, Sun, Moon } from 'lucide-react';
+import { Download, Clock, Sun, Moon, X } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -76,13 +76,13 @@ const documents: Document[] = [
     title: 'Research Logbook',
     description: 'The document describes the progress of the project within the specific time period and compares it against the project plan checklist',
     date: 'Updated: May 22, 2025',
-    url: 'https://drive.google.com/drive/u/0/folders/1-CJUzVR38GqU5A6hG5Taxa4BOlaFknNq'
+    url: ''
   },
   {
     title: 'Business Plan',
     description: 'Business plan is very valuable when it comes to commercializing the product to the real world market as an organization entity',
     date: 'Updated: May 22, 2025',
-    url: 'https://drive.google.com/drive/u/0/folders/1P7y7kBAbRiTnqwsneGNQbenn7Yo_tJ4k'
+    url: ''
   }
 ];
 
@@ -290,9 +290,108 @@ const team: TeamMember[] = [
   }
 ];
 
+// Add new component for Community Engagement Strategy
+const CommunityEngagementStrategy = ({ onClose }: { onClose: () => void }) => {
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-y-auto">
+      <div className="min-h-screen px-4 py-8">
+        <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-xl border border-gray-700/50">
+          <div className="p-6">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                Community Engagement Strategy
+              </h2>
+              <button
+                onClick={onClose}
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="prose prose-invert max-w-none">
+              <h3 className="text-xl font-semibold text-white mb-4">Integrated Healthcare System for Vulnerable Populations</h3>
+
+              <h4 className="text-lg font-semibold text-blue-400 mt-6 mb-3">Vulnerable Population Identification and Needs Assessment</h4>
+              
+              <h5 className="text-md font-semibold text-white mt-4 mb-2">Target Demographics:</h5>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li><strong>Post-surgery patients</strong> requiring ongoing monitoring and follow-up care to prevent complications</li>
+                <li><strong>Maternity mothers</strong> especially in rural or underserved areas facing difficulties accessing essential prenatal and postnatal care</li>
+                <li><strong>Individuals with Non-Communicable Diseases (NCDs)</strong> including:
+                  <ul className="list-disc pl-6 mt-2">
+                    <li>Diabetes mellitus patients</li>
+                    <li>Hypertension patients</li>
+                    <li>Cardiovascular disease patients</li>
+                    <li>Chronic respiratory disease patients</li>
+                    <li>Cancer patients</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h5 className="text-md font-semibold text-white mt-4 mb-2">Key Healthcare Challenges Identified:</h5>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li>Limited access to healthcare services in rural areas</li>
+                <li>Insufficient patient education and health literacy</li>
+                <li>Poor medication adherence (addressed through AI-driven reminder systems achieving 92% success rate)</li>
+                <li>Lack of personalized medical interventions</li>
+                <li>Inadequate support systems for ongoing care management</li>
+                <li>High hospital readmission rates (reduced by 25% through our integrated system)</li>
+              </ul>
+
+              <h4 className="text-lg font-semibold text-blue-400 mt-6 mb-3">Community Partnership Development</h4>
+              
+              <h5 className="text-md font-semibold text-white mt-4 mb-2">Healthcare Institution Collaborations:</h5>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li><strong>Homagama Base Hospital, Sri Lanka</strong> - Primary data collection partner providing clinical datasets</li>
+                <li><strong>Statistical and Census Department of Sri Lanka</strong> - National health statistics and demographic data</li>
+                <li><strong>External Supervisor Support</strong> - Ensuring ethical standards and clinical validation</li>
+              </ul>
+
+              <h4 className="text-lg font-semibold text-blue-400 mt-6 mb-3">Cultural Competency and Accessibility Considerations</h4>
+              
+              <h5 className="text-md font-semibold text-white mt-4 mb-2">Localization Features:</h5>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li><strong>Multi-language Support</strong> - System designed for Sri Lankan context with local language integration</li>
+                <li><strong>Cultural Health Practices Integration</strong> - Respecting traditional health beliefs while promoting evidence-based care</li>
+                <li><strong>Religious and Cultural Sensitivity</strong> - Accommodating cultural preferences in health recommendations</li>
+              </ul>
+
+              <h4 className="text-lg font-semibold text-blue-400 mt-6 mb-3">Patient and Provider Feedback Mechanisms</h4>
+              
+              <h5 className="text-md font-semibold text-white mt-4 mb-2">Real-Time Feedback Systems:</h5>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li><strong>Health Motivation Bot</strong> (Unsloth Llama 3.2 1B) - Delivers personalized motivational messages, challenges, and rewards</li>
+                <li><strong>AI-Powered Exercise Monitoring</strong> - Real-time corrective feedback during rehabilitation exercises using MediaPipe/OpenPose</li>
+                <li><strong>Emergency Response System</strong> - Automated alerts and GPS tracking for critical health events</li>
+              </ul>
+
+              <h5 className="text-md font-semibold text-white mt-4 mb-2">Patient Satisfaction Metrics:</h5>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li><strong>40% increase in patient satisfaction</strong> through personalized health recommendations</li>
+                <li>Continuous monitoring of user engagement and system usability</li>
+                <li>Regular surveys on treatment adherence and health outcomes</li>
+              </ul>
+
+              <h4 className="text-lg font-semibold text-blue-400 mt-6 mb-3">Data Privacy and Security Measures</h4>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2">
+                <li><strong>Blockchain Data Management</strong> - Ensuring 100% data integrity with zero significant security violations</li>
+                <li><strong>Role-Based Access Control (RBAC)</strong> - Protecting patient confidentiality</li>
+                <li><strong>Live Face Authentication</strong> - Enhanced security for sensitive health information access</li>
+                <li><strong>Compliance with Data Protection Laws</strong> - Meeting ethical standards for patient privacy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showStrategy, setShowStrategy] = useState(false);
 
   // Theme toggle handler
   const toggleTheme = () => {
@@ -340,7 +439,12 @@ export function App() {
             <p className="text-xl mb-8 text-gray-300">A comprehensive research project focusing on improving healthcare accessibility and quality for vulnerable communities through innovative technology solutions.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-200">Get Started</button>
-              <a href="https://lifetrack.vercel.app" target="_blank" rel="noopener noreferrer" className="btn bg-gray-700/50 hover:bg-gray-700 text-white backdrop-blur-sm border border-gray-600/50 transition-all duration-200 text-center">Learn More</a>
+              <button 
+                onClick={() => setShowStrategy(true)}
+                className="btn bg-gray-700/50 hover:bg-gray-700 text-white backdrop-blur-sm border border-gray-600/50 transition-all duration-200 text-center"
+              >
+                Learn More
+              </button>
             </div>
           </div>
         </div>
@@ -435,10 +539,17 @@ export function App() {
                 <p className="text-sm text-gray-300 mb-4">{doc.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">{doc.date}</span>
-                  <a href={doc.url} target="_blank" rel="noopener noreferrer" className="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-200">
-                    <Download className="w-4 h-4" />
-                    Download
-                  </a>
+                  {doc.url ? (
+                    <a href={doc.url} target="_blank" rel="noopener noreferrer" className="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-200">
+                      <Download className="w-4 h-4" />
+                      Download
+                    </a>
+                  ) : (
+                    <button className="btn bg-gray-700/50 text-gray-300 cursor-not-allowed border border-gray-600/50">
+                      <Clock className="w-4 h-4" />
+                      Coming Soon
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -649,6 +760,8 @@ export function App() {
           </div>
         </div>
       </footer>
+
+      {showStrategy && <CommunityEngagementStrategy onClose={() => setShowStrategy(false)} />}
     </div>
   );
 }
