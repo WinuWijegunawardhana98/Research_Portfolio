@@ -67,10 +67,10 @@ const documents: Document[] = [
     url: 'https://drive.google.com/drive/u/0/folders/1mSqE1C-44E6s3HXq2wXYMqI3scakmxD_'
   },
   {
-    title: 'Status Document',
-    description: 'The document describes the progress of the project within the specific time period and compares it against the project plan checklist',
+    title: 'Checklist',
+    description: 'A comprehensive checklist of all required documents and submissions for the project completion',
     date: 'Updated: May 22, 2025',
-    url: 'https://drive.google.com/drive/u/0/folders/1OmefzYiozlXyRsCaZQjD5i3_UmMPht8u'
+    url: 'https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2425JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2425JCloud%2F24%2D25J%2D282%2DStudents%2F6%2E%20Check%20List%20Documents&viewid=29f155a8%2Db072%2D4b74%2Dbcbe%2Dd933c2f93dfd'
   },
   {
     title: 'Research Logbook',
